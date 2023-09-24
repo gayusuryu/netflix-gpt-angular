@@ -63,10 +63,12 @@ export class LoginComponent implements OnInit{
   }
 
   submitSignIn(){
-
+    console.log(this.signInForm);
+    console.log('Saved:' + JSON.stringify(this.signInForm?.value));
   }
 
   submitSignUp(){
-
+    console.log(this.signUpForm);
+    console.log('Saved:' + JSON.stringify(this.signUpForm?.value));
   }
 }

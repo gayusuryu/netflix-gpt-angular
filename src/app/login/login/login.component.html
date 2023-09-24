@@ -7,11 +7,11 @@
  <form (ngSubmit)="submitSignIn()" [formGroup]="signInForm" class="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
    <h1 class='font-bold text-3xl py-4'>Sign In</h1>
     <input type='email' placeholder='Email Address' class='p-4 my-4 w-full bg-gray-700' id="email" formControlName="email"/>
-    <span *ngIf="(signInForm.get('email')?.errors?.['required'] || (signInForm.get('email')?.touched || signInForm.get('email')?.dirty) && !signInForm.get('email')?.valid)">
+    <span *ngIf="(signInForm.get('email')?.touched || signInForm.get('email')?.dirty) && !signInForm.get('email')?.valid">
       Please enter your email.
     </span>
     <input type='password' placeholder='Password' class='p-4 my-4 w-full bg-gray-700' id="password" formControlName="password"/>
-    <span *ngIf="(signInForm.get('password')?.errors?.['required'] || (signInForm.get('password')?.touched || signInForm.get('password')?.dirty) && !signInForm.get('password')?.valid)">
+    <span *ngIf="(signInForm.get('password')?.touched || signInForm.get('password')?.dirty) && !signInForm.get('password')?.valid">
       Please enter your password.
     </span>
     <span *ngIf="signInForm.get('password')?.errors?.['minlength']">
@@ -24,23 +24,23 @@
  <form (ngSubmit)="submitSignUp()" [formGroup]="signUpForm" *ngIf="isSignUp" class="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
    <h1 class='font-bold text-3xl py-4'>Sign Up</h1>
    <input type='text' placeholder='Name' class='p-4 my-4 w-full bg-gray-700' id="name" formControlName="name"/>
-   <span *ngIf="(signUpForm.get('name')?.errors?.['required'] || (signUpForm.get('name')?.touched || signUpForm.get('name')?.dirty) && !signUpForm.get('name')?.valid)">
+   <span *ngIf="(signUpForm.get('name')?.touched || signUpForm.get('name')?.dirty) && !signUpForm.get('name')?.valid">
       Please enter your name.
     </span>
     <input type='email' placeholder='Email Address' class='p-4 my-4 w-full bg-gray-700' id="email" formControlName="email"/>
-    <span *ngIf="(signUpForm.get('email')?.errors?.['required'] || (signUpForm.get('email')?.touched || signUpForm.get('email')?.dirty) && !signUpForm.get('email')?.valid)">
+    <span *ngIf="(signUpForm.get('email')?.touched || signUpForm.get('email')?.dirty) && !signUpForm.get('email')?.valid">
       Please enter your email.
     </span>
     <div formGroupName="passwordGroup">
     <input type='password' placeholder='Password' class='p-4 my-4 w-full bg-gray-700' id="password" formControlName="password"/>
-    <span *ngIf="(signUpForm.get('passwordGroup.password')?.errors?.['required'] || (signUpForm.get('passwordGroup.password')?.touched || signUpForm.get('passwordGroup.password')?.dirty) && !signUpForm.get('passwordGroup.password')?.valid)">
+    <span *ngIf="(signUpForm.get('passwordGroup.password')?.touched || signUpForm.get('passwordGroup.password')?.dirty) && !signUpForm.get('passwordGroup.password')?.valid">
       Please enter your password.
     </span>
     <span *ngIf="signUpForm.get('passwordGroup.password')?.errors?.['minlength']">
       The password must be atleast 8 characters.
     </span>
     <input type='password' placeholder='Confirm Password' class='p-4 my-4 w-full bg-gray-700' id="confirmPassword" formControlName="confirmPassword"/>
-    <span *ngIf="signUpForm.get('passwordGroup.confirmPassword')?.errors?.['required']">
+    <span *ngIf="(signUpForm.get('passwordGroup.confirmPassword')?.touched || signUpForm.get('passwordGroup.confirmPassword')?.dirty) && !signUpForm.get('passwordGroup.confirmPassword')?.valid">
       Please confirm your password.
     </span>
     <span *ngIf="signUpForm.get('passwordGroup')?.errors?.['match']">
